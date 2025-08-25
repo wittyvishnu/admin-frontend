@@ -5,9 +5,8 @@ import OrdersOverview from '../components/orders/OrdersOverview.jsx'
 function Orders() {
   return (
     <div>
-      <h2>Orders Content</h2>
       <OrdersTable />
-      <OrdersOverview />
+      {/* <OrdersOverview /> */}
     </div>
   )
 }

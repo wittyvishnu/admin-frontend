@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --bg: #f6f7fb;
   --card: #ffffff;
@@ -38,6 +42,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  
 }
 .main {
   padding: 20px 28px;
@@ -45,21 +50,32 @@ h1, h2, h3, h4 {
 
 /* -------- Header -------- */
 .app-header {
-  display: grid;
-  grid-template-columns: 1fr minmax(320px, 560px) 1fr;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 0;
+  top: 4px;
+  left: 240px;
+  width: 1160px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align search bar left and push right group with margin-left auto */
+  gap: 20px;
+  padding-left: 27px;
+  padding-right: 27px;
+
+  background: var(--card);
+  opacity: 1;
+  border-bottom: 1px solid #C8CBD9;
+
   z-index: 10;
+  transform: rotate(0deg);
 }
+
 .search-wrap {
   position: relative;
   display: flex;
   align-items: center;
+  width: 320px; /* fixed width to control search bar size */
 }
 .search-input {
   width: 100%;
@@ -70,6 +86,7 @@ h1, h2, h3, h4 {
   outline: none;
   background: #f8fafc;
   font-size: 14px;
+  box-shadow: var(--shadow); /* subtle shadow */
 }
 .search-icon {
   position: absolute;
@@ -77,12 +94,14 @@ h1, h2, h3, h4 {
   font-size: 18px;
   color: #9aa1aa;
 }
+
 .header-right {
-  justify-self: end;
   display: flex;
   align-items: center;
   gap: 18px;
+  margin-left: auto; /* push right section far right */
 }
+
 .bell-wrap {
   position: relative;
   display: grid;
@@ -106,6 +125,7 @@ h1, h2, h3, h4 {
   background: #ef4444;
   border-radius: 50%;
 }
+
 .profile {
   display: flex;
   align-items: center;
@@ -419,7 +439,6 @@ h1, h2, h3, h4 {
   transform: scale(0.97);
 }
 
-
 /* -------- Sidebar -------- */
 .sidebar {
   background: #f4f6ff;
@@ -441,7 +460,7 @@ h1, h2, h3, h4 {
 .sidebar .logo span {
   font-size: 18px;
   font-weight: 700;
-  color: #2563eb;
+  color: #2563eb; /* blue color for active */
 }
 .nav-list {
   list-style: none;
